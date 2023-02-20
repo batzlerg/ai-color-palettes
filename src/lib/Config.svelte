@@ -10,9 +10,9 @@
 <div class="config">
   <button on:click={toggleConfigMenu}>
     {#if isConfigMenuOpen}
-      X
+      &#10006;
     {:else}
-      config
+      &#9881;
     {/if}
   </button>
   {#if isConfigMenuOpen}
@@ -36,13 +36,22 @@
 <style>
   .config {
     position: absolute;
-    left: 1rem;
+    right: 1rem;
     top: 1rem;
   }
   .config-menu {
     text-align: left;
     position: absolute;
     top: 3rem;
-    left: 0rem;
+    right: 0rem;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    z-index: 1000;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--radius);
+  }
+  .config-menu label {
+    display: flex;
+    flex-direction: column;
   }
 </style>

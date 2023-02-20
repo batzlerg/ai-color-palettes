@@ -50,7 +50,7 @@
   }
   .prompt {
     text-align: left;
-    padding-right: 1rem;
+    padding-bottom: 0.6rem;
   }
   .response {
     display: flex;

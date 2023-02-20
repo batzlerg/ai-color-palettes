@@ -30,6 +30,7 @@
     bottom: 0;
     padding: 0.1rem 0.3rem;
     font-size: 0.8rem;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, var(--translucent));
+    color: var(--off-white);
   }
 </style>
