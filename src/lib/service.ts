@@ -16,6 +16,8 @@ interface OpenAIResponse { // partial, only what we care about
   }
 }
 
+const OPENAI_COMPLETION_URL = 'https://api.openai.com/v1/completions'
+
 export async function getPromptResponse({
   context,
   exampleInput,
@@ -28,11 +30,11 @@ export async function getPromptResponse({
   prompt: string,
 }): Promise<Response> {
   try {
-    const response = await fetch("", {
+    const response = await fetch(OPENAI_COMPLETION_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": "Bearer " + import.meta.env.OPENAI_KEY
+        "Authorization": "Bearer " + import.meta.env.VITE_OPENAI_KEY
       },
       body: JSON.stringify({
         model: "text-davinci-003",
@@ -53,13 +55,8 @@ export async function getPromptResponse({
       return JSON.parse(body.choices[0].text);
     }
   } catch (error) {
-    return {
-      black: "#000000",
-      white: "#ffffff",
-      "dark grey": "#666666",
-    };
-    // if (error instanceof Error) {
-    //   throw error
-    // }
+    if (error instanceof Error) {
+      throw error
+    }
   }
 }
