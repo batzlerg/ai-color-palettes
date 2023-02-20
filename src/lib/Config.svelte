@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { promptPrefix } from "./store";
+  import { promptContext, exampleInput, exampleOutput } from "./store";
   let isConfigMenuOpen = false;
 
   function toggleConfigMenu() {
@@ -8,7 +8,6 @@
 </script>
 
 <div class="config">
-  <!-- <div class="config"> -->
   <button on:click={toggleConfigMenu}>
     {#if isConfigMenuOpen}
       X
@@ -19,12 +18,19 @@
   {#if isConfigMenuOpen}
     <div class="config-menu">
       <label>
-        Prompt Prefix
-        <textarea bind:value={$promptPrefix} />
+        Prompt Setup
+        <textarea bind:value={$promptContext} rows={5} cols={40} />
+      </label>
+      <label>
+        Prompt Example
+        <textarea bind:value={$exampleInput} rows={2} cols={40} />
+      </label>
+      <label>
+        Response Example
+        <textarea bind:value={$exampleOutput} rows={10} cols={40} />
       </label>
     </div>
   {/if}
-  <!-- </div> -->
 </div>
 
 <style>

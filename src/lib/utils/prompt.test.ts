@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
-import { _buildExample, _buildPromptString } from "./prompt";
+import { buildExampleString, buildPromptString } from "./prompt";
 
-describe('_buildExample', () => {
+describe('buildExampleString', () => {
   test("concatenates as expected", () => {
     const args = {
       inputLabel: '1',
@@ -9,13 +9,13 @@ describe('_buildExample', () => {
       exampleInput: '3',
       exampleOutput: '4',
     }
-    const result = _buildExample(args);
+    const result = buildExampleString(args);
     expect(result).toEqual("1: 3\n2: 4");
   })
 })
 
 
-describe('_buildPromptString', () => {
+describe('buildPromptString', () => {
   test("concatenates as expected", () => {
     const args = {
       context: 'do a prompty thing.',
@@ -23,7 +23,7 @@ describe('_buildPromptString', () => {
       exampleInput: 'armageddon',
       exampleOutput: '{ annihilation: "#000000", death: "#000001" }',
     }
-    const result = _buildPromptString(args);
+    const result = buildPromptString(args);
     expect(result).toEqual(
       `do a prompty thing. Here is an example.
 Prompt: armageddon

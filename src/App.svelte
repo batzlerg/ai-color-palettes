@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Prompt from "./lib/Prompt.svelte";
+  import Input from "./lib/Input.svelte";
+  import Output from "./lib/Output.svelte";
   import Config from "./lib/Config.svelte";
-  import { promptPrefix } from "./lib/store";
 </script>
 
 <main>
@@ -9,11 +9,8 @@
   <h1>Structured Chat</h1>
 
   <div class="card">
-    <Prompt />
-  </div>
-
-  <div>
-    {$promptPrefix}
+    <Input />
+    <Output />
   </div>
 </main>
 

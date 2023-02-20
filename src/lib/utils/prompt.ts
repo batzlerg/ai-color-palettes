@@ -1,6 +1,6 @@
 import { INPUT_LABEL, OUTPUT_LABEL } from "../constants";
 
-export function _buildExample({
+export function buildExampleString({
   inputLabel,
   outputLabel,
   exampleInput,
@@ -9,7 +9,7 @@ export function _buildExample({
   return `${inputLabel}: ${exampleInput}` + '\n' + `${outputLabel}: ${exampleOutput}`;
 }
 
-export function _buildPromptString({
+export function buildPromptString({
   context,
   exampleInput,
   exampleOutput,
@@ -21,7 +21,7 @@ export function _buildPromptString({
   prompt: string
 }) {
   return `${context} Here is an example.
-${_buildExample({ exampleInput, exampleOutput, inputLabel: INPUT_LABEL, outputLabel: OUTPUT_LABEL })}
+${buildExampleString({ exampleInput, exampleOutput, inputLabel: INPUT_LABEL, outputLabel: OUTPUT_LABEL })}
 
 ${INPUT_LABEL}: ${prompt}
 ${OUTPUT_LABEL}:`;
