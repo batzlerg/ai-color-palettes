@@ -16,7 +16,8 @@ interface OpenAIResponse { // partial, only what we care about
   }
 }
 
-const OPENAI_COMPLETION_URL = 'https://api.openai.com/v1/completions'
+const OPENAI_COMPLETION_URL = 'https://example.com/v1/completions'
+// const OPENAI_COMPLETION_URL = 'https://api.openai.com/v1/completions'
 
 export async function getPromptResponse({
   context,
@@ -55,6 +56,11 @@ export async function getPromptResponse({
       return JSON.parse(body.choices[0].text);
     }
   } catch (error) {
+    return {
+      black: "#000000",
+      white: "#ffffff",
+      "dark grey": "#666666",
+    };
     if (error instanceof Error) {
       throw error
     }

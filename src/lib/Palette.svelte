@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { Response } from "./types";
   export let response: Response;
-  console.log(response);
   $: colors = Object.entries(response);
 </script>
 
@@ -15,7 +14,7 @@
 
 <style>
   .palette {
-    display: flex;
+    display: inline-flex;
   }
   .palette-tile {
     display: inline-flex;

@@ -1,10 +1,15 @@
 <script>
-  import { history, prompts, responses } from "./store";
+  import { history } from "./store";
   import Palette from "./Palette.svelte";
 
-  function copyOutput(_, index) {
+  function copyOutput(index) {
+    const copiedString = JSON.stringify($history[index][1]);
+    console.info(
+      `Copied %c${copiedString}%c` + `to the clipboard`,
+      "color:white;background-color:black;"
+    );
     // Copy the text inside the text field
-    navigator.clipboard.writeText(JSON.stringify($history[index][1]));
+    navigator.clipboard.writeText(copiedString);
   }
 
   function resetToPriorPrompt(index) {
@@ -34,10 +39,17 @@
     margin-left: 2rem;
     /* offset hover copy button */
   }
+  .history-table-row {
+    padding-bottom: 1rem;
+  }
   .prompt {
     max-width: 10rem;
     text-align: left;
     padding-right: 1rem;
+  }
+  .response {
+    display: flex;
+    place-items: center;
   }
   .response * {
     display: inline-block;
@@ -46,13 +58,11 @@
     visibility: hidden;
     font-size: 0.7rem;
     padding: 0;
+    margin-left: 1rem;
     width: 2rem;
     height: 2rem;
   }
   .response:hover .copy-output {
     visibility: visible;
-  }
-  .history-table-row {
-    padding-bottom: 1rem;
   }
 </style>

@@ -10,6 +10,9 @@
 
   <div class="card">
     <Input />
+  </div>
+
+  <div class="card">
     <Output />
   </div>
 </main>
