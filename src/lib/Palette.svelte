@@ -15,6 +15,7 @@
 <style>
   .palette {
     display: inline-flex;
+    flex-grow: 1;
   }
   .palette-tile {
     display: inline-flex;
@@ -27,6 +28,8 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    padding: 0.1rem 0.3rem;
+    font-size: 0.8rem;
     background-color: rgba(0, 0, 0, 0.5);
   }
 </style>

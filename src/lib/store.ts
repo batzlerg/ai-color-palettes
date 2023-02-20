@@ -1,4 +1,4 @@
-import { derived, writable } from "svelte/store";
+import { writable } from "svelte/store";
 import type { Response } from './types';
 
 window.localStorage.getItem('color_palette_responses')

@@ -23,7 +23,7 @@
 </script>
 
 <div class="prompt">
-  <input bind:value={prompt} />
+  <input bind:value={prompt} placeholder="Enter a short, descriptive prompt" />
   <button on:click={doThing}>Submit</button>
 </div>
 

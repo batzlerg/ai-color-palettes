@@ -18,51 +18,72 @@
 </script>
 
 {#if $history.length}
-  <table class="history-table">
+  <div class="history-table">
     {#each $history as [input, output], index}
-      <tr class="history-table-row">
-        <td class="prompt">{input}</td>
-        <td class="response">
+      <div class="history-table-row">
+        <div class="prompt">{input}</div>
+        <div class="response">
           <Palette response={output} />
           <button class="copy-output" on:click={() => copyOutput(index)}>
             &#128203;
           </button>
-        </td>
-      </tr>
+        </div>
+      </div>
     {/each}
-  </table>
+  </div>
+{:else}
+  <div class="default">
+    <ul class="suggestions">
+      <li>"A starry night"</li>
+      <li>"Rosy sunset by the beach"</li>
+      <li>"The feeling of lonely introspection"</li>
+    </ul>
+  </div>
 {/if}
 
+<!-- todo: slick transitions -->
 <style>
   .history-table {
+    display: grid;
+    gap: 1.5rem;
     min-width: 100%;
-    margin-left: 2rem;
-    /* offset hover copy button */
-  }
-  .history-table-row {
-    padding-bottom: 1rem;
   }
   .prompt {
-    max-width: 10rem;
     text-align: left;
     padding-right: 1rem;
   }
   .response {
     display: flex;
     place-items: center;
+    position: relative;
   }
   .response * {
     display: inline-block;
   }
   .copy-output {
+    position: absolute;
     visibility: hidden;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     padding: 0;
-    margin-left: 1rem;
     width: 2rem;
     height: 2rem;
+    top: 0.2rem;
+    right: 0.2rem;
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .response:hover .copy-output {
     visibility: visible;
+  }
+  .default * {
+    text-align: center;
+    font-weight: 400;
+  }
+  .suggestions {
+    padding: 0;
+  }
+  .suggestions li {
+    list-style-type: none;
+    font-style: italic;
+    padding-bottom: 1rem;
   }
 </style>
