@@ -3,13 +3,7 @@ import { buildPromptString } from './utils/prompt';
 import { sanitizeResponse } from './utils/response';
 
 interface OpenAIResponse { // partial, only what we care about
-  choices: [
-    {
-      text: string,
-      // "finish_reason": "length"
-      // todo: error on truncation here?
-    }
-  ],
+  choices: Array<{ text: string }>,
   usage: {
     prompt_tokens: number,
     completion_tokens: number,
@@ -57,11 +51,6 @@ export async function getPromptResponse({
       return JSON.parse(sanitizeResponse(body.choices[0].text));
     }
   } catch (error) {
-    // return {
-    //   black: "#000000",
-    //   white: "#ffffff",
-    //   "dark grey": "#666666",
-    // };
     if (error instanceof Error) {
       throw error
     }

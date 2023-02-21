@@ -19,7 +19,6 @@
   }
   .palette-tile {
     display: inline-flex;
-    width: 5rem;
     height: 5rem;
     flex: 1 1;
     position: relative;
@@ -33,5 +32,6 @@
     font-size: 0.8rem;
     background-color: var(--translucent-black);
     color: var(--off-white);
+    word-wrap: anywhere;
   }
 </style>

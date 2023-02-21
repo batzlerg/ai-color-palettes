@@ -74,12 +74,17 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--off-black-darker);
-  cursor: pointer;
   transition: border-color 0.25s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   border-color: var(--accent-color);
+  cursor: pointer;
+}
+
+input:disabled,
+button:disabled {
+  cursor: progress;
 }
 
 button:focus,

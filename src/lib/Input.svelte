@@ -4,8 +4,7 @@
   let prompt: string = "";
   let loading = false;
 
-  function doThing() {
-    // make API call
+  function queryLLM() {
     loading = true;
 
     getPromptResponse({
@@ -18,16 +17,18 @@
         // prepend so the most recent items are at the top
         history.update((history) => [[prompt, response], ...history]);
       })
-      .catch((err) => {
-        console.error(err);
-      })
+      .catch(console.error)
       .finally(() => (loading = false));
   }
 </script>
 
 <div class="prompt">
-  <input bind:value={prompt} placeholder="Enter a short, descriptive prompt" />
-  <button on:click={doThing}>
+  <input
+    bind:value={prompt}
+    placeholder="Enter a short, descriptive prompt"
+    disabled={loading}
+  />
+  <button on:click={queryLLM} disabled={loading}>
     {#if loading}...{:else}Submit{/if}
   </button>
 </div>
