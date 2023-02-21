@@ -5,7 +5,7 @@ This is a thin client on top of OpenAI's API tuned for generating color palettes
 
 I built it on 2/20/23 as a way to become more familiar with the scope and options of the OpenAI API, as well as to de-rust my Svelte skills.
 
-## Potential Roadmap items
+## Potential roadmap items
 - the app doesn't have a particularly excellent UI design, it's largely adapted from the Vite + Svelte starter styling with some tweaks for mobile usability
 - the app is architected to be adaptable to arbitrary query formats / data contracts; one day I may get a hair up to convert it into a generalizable prompt string concatenator and API exerciser.
 - currently the localStorage usage only extends to the prompt/response data, this could be better if the edited prompt context / examples were also cached to prevent losing your work between loads
