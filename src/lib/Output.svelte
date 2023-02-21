@@ -11,10 +11,6 @@
     // Copy the text inside the text field
     navigator.clipboard.writeText(copiedString);
   }
-
-  function resetToPriorPrompt(index) {
-    // prompts.set
-  }
 </script>
 
 {#if $history.length}

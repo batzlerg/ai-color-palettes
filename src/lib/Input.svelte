@@ -1,6 +1,7 @@
 <script lang="ts">
   import { promptContext, exampleInput, exampleOutput, history } from "./store";
   import { getPromptResponse } from "./service";
+  import LoadingEllipses from "./LoadingEllipses.svelte";
   let prompt: string = "";
   let loading = false;
 
@@ -29,7 +30,11 @@
     disabled={loading}
   />
   <button on:click={queryLLM} disabled={loading}>
-    {#if loading}...{:else}Submit{/if}
+    {#if loading}
+      <LoadingEllipses />
+    {:else}
+      Submit
+    {/if}
   </button>
 </div>
 
