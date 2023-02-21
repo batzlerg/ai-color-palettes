@@ -3,7 +3,7 @@ Input vibes, output color palettes.
 
 This is a thin client on top of OpenAI's API tuned for generating color palettes.
 
-I built it on 2/20/23 as a way to become more familiar with the scope and options of the OpenAI API, as well as to de-rust my Svelte skills.
+Built on 2/20/23 as a way to become more familiar with the scope and options of the OpenAI API, as well as to de-rust my Svelte skills.
 
 ## Potential roadmap items
 - the app doesn't have a particularly excellent UI design, it's largely adapted from the Vite + Svelte starter styling with some tweaks for mobile usability
