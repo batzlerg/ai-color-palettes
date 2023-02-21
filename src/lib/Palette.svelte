@@ -23,6 +23,7 @@
     height: 5rem;
     flex: 1 1;
     position: relative;
+    text-align: left;
   }
   .color-name {
     position: absolute;
@@ -30,7 +31,7 @@
     bottom: 0;
     padding: 0.1rem 0.3rem;
     font-size: 0.8rem;
-    background-color: rgba(0, 0, 0, var(--translucent));
+    background-color: var(--translucent-black);
     color: var(--off-white);
   }
 </style>

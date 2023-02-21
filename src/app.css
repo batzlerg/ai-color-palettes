@@ -3,7 +3,7 @@
   --off-white-darker: #b1b1b1;
   --off-black: #2e2e2e;
   --off-black-darker: #161616;
-  --translucent: 0.6;
+  --translucent-black: rgba(0, 0, 0, .6);
   --radius: 8px;
 
   --accent-color: #646cff;
@@ -51,6 +51,10 @@ h1 {
   line-height: 1.1;
 }
 
+input {
+  padding-left: .4rem;
+}
+
 .card {
   padding: 2em 0;
 }
@@ -79,9 +83,7 @@ button:hover {
 }
 
 button:focus,
-button:focus-visible,
-input,
-input:focus {
+button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 

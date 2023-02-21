@@ -3,7 +3,7 @@ import type { Response } from './types';
 
 // config data
 export const promptContext = writable(
-  `Return a color palette in JSON that matches the mood of the prompt phrase. Include the color as a hex code and a name for the color.`);
+  `Return a JSON color palette of 3-7 items that matches the mood of the prompt phrase. Include the color as a hex code and a name for the color.`);
 export const exampleInput = writable(`film noir`)
 export const exampleOutput = writable(`{
   "black": "#000000",
@@ -12,6 +12,7 @@ export const exampleOutput = writable(`{
 }`);
 
 // initialize our previous response state backed by LS so we preserve history between page loads
+// todo: allow clearing via UI
 let cachedHistory = [];
 try {
   const rawLSData = window.localStorage.getItem('color_palette_history');

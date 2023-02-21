@@ -1,5 +1,6 @@
 import type { Response } from './types';
-import { buildPromptString } from './utils/prompt'
+import { buildPromptString } from './utils/prompt';
+import { sanitizeResponse } from './utils/response';
 
 interface OpenAIResponse { // partial, only what we care about
   choices: [
@@ -53,7 +54,7 @@ export async function getPromptResponse({
 
     if (response.ok) {
       // todo: handle malformed response
-      return JSON.parse(body.choices[0].text);
+      return JSON.parse(sanitizeResponse(body.choices[0].text));
     }
   } catch (error) {
     // return {

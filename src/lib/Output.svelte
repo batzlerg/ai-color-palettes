@@ -25,7 +25,7 @@
         <div class="response">
           <Palette response={output} />
           <button class="copy-output" on:click={() => copyOutput(index)}>
-            &#128203;
+            &#x1F5CE;
           </button>
         </div>
       </div>
@@ -63,13 +63,13 @@
   .copy-output {
     position: absolute;
     visibility: hidden;
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0;
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     top: 0.2rem;
     right: 0.2rem;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--translucent-black);
   }
   .response:hover .copy-output {
     visibility: visible;
